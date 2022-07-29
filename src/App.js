@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+// import { Player } from '@lottiefiles/react-lottie-player';
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+
+import Navigation from './Components/Navigation/Navigation';
+import HomePage from './Pages/HomePage/HomePage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navigation />
+      <Switch>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
+    </Router>
+    // <div className="App">
+    //   {/* <Player
+    //     autoplay
+    //     loop
+    //     speed={1.5}
+    //     src="https://assets2.lottiefiles.com/packages/lf20_4DLPlW.json"
+    //     style={{ height: '500px', width: '500px' }}
+    //   ></Player> */}
+    //   Resume Builder
+    // </div>
   );
 }
 
