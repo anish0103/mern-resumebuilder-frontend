@@ -1,0 +1,43 @@
+.homepage-maincontainer {
+  display: flex;
+  width: 100%;
+  height: 93vh;
+  align-items: center;
+}
+.homepage-leftcontainer,
+.homepage-rightcontainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.homepage-leftsubcontainer,
+.homepage-rightsubcontainer {
+  width: 80%;
+}
+.homepage-rightsubcontainer {
+  height: 80%;
+}
+.homepage-leftsubcontainer p {
+  font-size: 25px;
+  color: #868d93;
+  margin: 25px 0;
+}
+.homepage-leftsubcontainer h3 {
+  font-size: 45px;
+  color: #35393d;
+  margin-top: 0;
+}
+.homepage-createbutton {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: #246bfb;
+  transition: 0.4s;
+}
+.homepage-createbutton:hover {
+  background-color: #35393d;
+}
