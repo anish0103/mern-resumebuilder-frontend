@@ -49,7 +49,7 @@ const HomePage = () => {
   }
 
   return (
-    <motion.div variants={ContainerVariant} initial="hidden" animate="show" className='homepage-maincontainer'>
+    <motion.div variants={ContainerVariant} initial="hidden" animate="show" exit="hidden" className='homepage-maincontainer'>
       <div className='homepage-leftcontainer'>
         <motion.div variants={ElementVariant} className='homepage-leftsubcontainer'>
           <motion.p variants={ElementVariant}>TURN ON YOUR CAREER</motion.p>

@@ -1,0 +1,105 @@
+.authpage-maincontainer {
+  display: flex;
+  width: 100%;
+  height: 93vh;
+  align-items: center;
+}
+.authpage-leftcontainer,
+.authpage-rightcontainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.authpage-leftsubcontainer {
+  width: 80%;
+}
+.authpage-leftcontainer img {
+  width: 100%;
+}
+.authpage-formcontainer {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.authpage-formname {
+  font-size: 18px;
+}
+.authpage-inputcontainer {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+}
+.authpage-inputcontainer label {
+  font-size: 14px;
+}
+.authpage-inputcontainer input {
+  padding: 12px;
+  outline: none;
+  margin-top: 5px;
+  background-color: transparent;
+  border: 2px solid #f5f5f5;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  transition: 0.4s;
+  color: #35393d;
+}
+.authpage-inputcontainer input:focus {
+  border: 2px solid #246bfb;
+}
+.authpage-loginbuttoncontainer,
+.authpage-singupbuttoncontainer {
+  width: 80%;
+}
+.authpage-loginbuttoncontainer button {
+  width: 100%;
+  padding: 9px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: #246bfb;
+  color: white;
+  font-size: 16px;
+  border: 2px solid #246bfb;
+  transition: 0.4s;
+}
+.authpage-loginbuttoncontainer button:hover {
+  background-color: #0055ff;
+  cursor: pointer;
+}
+.authpage-singupbuttoncontainer button {
+  width: 100%;
+  padding: 9px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid #246bfb;
+  color: #246bfb;
+  background-color: transparent;
+  font-size: 16px;
+  transition: 0.4s;
+}
+.authpage-singupbuttoncontainer button:hover {
+  background-color: #246bfb;
+  color: white;
+  cursor: pointer;
+}
+.authpage-separator {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+}
+.authpage-separator div {
+  height: 1px;
+  flex: 1;
+  background-color: #868d93;
+}
+.authpage-separator p {
+  margin: 0px 5px;
+  font-size: 13px;
+}
