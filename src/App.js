@@ -7,7 +7,7 @@ import Navigation from './Components/Navigation/Navigation';
 import HomePage from './Pages/HomePage/HomePage';
 import LogInPage from './Pages/LogInPage/LogInPage';
 import SignUpPage from './Pages/SignUpPage/SignUpPage';
-
+import AddInformationPage from './Pages/AddInformationPage/AddInformationPage';
 
 function App() {
   const location = useLocation();
@@ -24,6 +24,9 @@ function App() {
           </Route>
           <Route path="/signup" exact>
             <SignUpPage />
+          </Route>
+          <Route path="/addinformation" exact>
+            <AddInformationPage />
           </Route>
           <Redirect to="/" />
         </Switch>

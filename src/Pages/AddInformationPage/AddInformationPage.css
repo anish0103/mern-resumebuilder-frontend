@@ -1,0 +1,108 @@
+.personalinformation-maincontainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.personalinformation-container {
+  width: 90%;
+}
+.personalinformation-titlecontainer {
+  font-size: 22px;
+}
+.personalinformation-personaldetailcontainer,
+.personalinformation-educationdetailcontainer,
+.personalinformation-skillsdetailcontainer {
+  border: 1px solid #868d93;
+  border-radius: 8px;
+  padding: 8px;
+}
+.personalinformation-skillsdetailcontainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.personalinformation-inputcontainer {
+  display: flex;
+  margin: 10px 5px;
+  width: 99%;
+  flex-direction: column;
+}
+.personalinformation-skillinput {
+  margin: 5px;
+  padding: 12px;
+  outline: none;
+  width: 75px;
+  border: 2px solid #f5f5f5;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  transition: 0.4s;
+  color: #35393d;
+}
+.personalinformation-skillinput:focus {
+  border: 2px solid #246bfb;
+}
+.personalinformation-inputcontainer input,
+.personalinformation-inputcontainer textarea {
+  margin: 5px 0;
+  padding: 12px;
+  outline: none;
+  border: 2px solid #f5f5f5;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  transition: 0.4s;
+  color: #35393d;
+}
+.personalinformation-inputcontainer textarea {
+  height: 80px;
+  resize: none;
+}
+.personalinformation-inputcontainer input:focus,
+.personalinformation-inputcontainer textarea:focus {
+  border: 2px solid #246bfb;
+}
+.personalinformation-actionbuttoncontainer {
+  margin: 10px 0;
+}
+.personalinformation-actionbuttoncontainer button {
+  padding: 9px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: #246bfb;
+  color: white;
+  font-size: 16px;
+  border: 2px solid #246bfb;
+  transition: 0.4s;
+  margin-right: 20px;
+}
+.personalinformation-actionbuttoncontainer button:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: #246bfb;
+}
+.personalinformation-educationdetailcontainer button,
+.personalinformation-skillsdetailcontainer button {
+  padding: 6px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid #246bfb;
+  color: #246bfb;
+  background-color: transparent;
+  font-size: 15px;
+  transition: 0.4s;
+}
+.personalinformation-educationdetailcontainer button:hover,
+.personalinformation-skillsdetailcontainer button:hover {
+  cursor: pointer;
+  background-color: #246bfb;
+  color: white;
+}
+.personalinformation-horizontalcontainer {
+  display: flex;
+}
+.personalinformation-container p {
+  font-weight: 500;
+}
