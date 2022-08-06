@@ -13,7 +13,7 @@ const HomePage = () => {
     show: {
       opacity: 1,
       transition: {
-        delayChildren: 1,
+        delayChildren: 0.6,
         staggerChildren: 0.4,
       }
     }

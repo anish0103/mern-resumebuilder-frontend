@@ -38,6 +38,11 @@
   transition: 0.4s;
   color: #35393d;
 }
+.personalinformation-sectiontitle {
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+}
 .personalinformation-skillinput:focus {
   border: 2px solid #246bfb;
 }
@@ -53,7 +58,7 @@
   color: #35393d;
 }
 .personalinformation-inputcontainer textarea {
-  height: 80px;
+  height: 100px;
   resize: none;
 }
 .personalinformation-inputcontainer input:focus,
@@ -62,6 +67,8 @@
 }
 .personalinformation-actionbuttoncontainer {
   margin: 10px 0;
+  display: flex;
+  justify-content: flex-end;
 }
 .personalinformation-actionbuttoncontainer button {
   padding: 9px;
@@ -81,7 +88,8 @@
   color: #246bfb;
 }
 .personalinformation-educationdetailcontainer button,
-.personalinformation-skillsdetailcontainer button {
+.personalinformation-addbutton,
+.personalinformation-deletebutton {
   padding: 6px;
   width: 100px;
   height: 40px;
@@ -92,10 +100,28 @@
   color: #246bfb;
   background-color: transparent;
   font-size: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   transition: 0.4s;
 }
+.personalinformation-deletebutton {
+  border: 2px solid #E76450 !important;
+  color: #E76450 !important;
+  margin-right: 10px;
+  width: fit-content !important;
+  background-color: transparent;
+}
+.personalinformation-deletebutton:hover {
+  cursor: pointer;
+  background-color: #E76450 !important;
+  color: white !important;
+}
+.personalinformation-addbutton {
+  margin-left: 10px;
+}
 .personalinformation-educationdetailcontainer button:hover,
-.personalinformation-skillsdetailcontainer button:hover {
+.personalinformation-addbutton:hover {
   cursor: pointer;
   background-color: #246bfb;
   color: white;
@@ -105,4 +131,10 @@
 }
 .personalinformation-container p {
   font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.personalinformation-deletebuttoncontainer {
+  display: flex;
+  justify-content: flex-end;
 }

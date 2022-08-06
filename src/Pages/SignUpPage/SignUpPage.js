@@ -13,8 +13,8 @@ const SignUpPage = () => {
     show: {
       opacity: 1,
       transition: {
-        delayChildren: 1,
-        staggerChildren: 0.4,
+        delayChildren: 0.6,
+        staggerChildren: 0.2,
       }
     }
   }
