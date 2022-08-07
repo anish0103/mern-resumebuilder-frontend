@@ -1,10 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useSelector, useDispatch } from 'react-redux'
 
 import './Navigation.css'
+import { LoginStatusHandler } from '../../store/action/action'
 
 const Navigation = () => {
+  const isLogin = useSelector(state => state.isLogin)
+  const dispatch = useDispatch()
+
   const ContainerVariant = {
     hidden: {
       opacity: 0
@@ -32,16 +37,24 @@ const Navigation = () => {
     }
   }
 
+  const LogoutHandler = () => {
+    dispatch(LoginStatusHandler(false))
+    console.log("Logging out...")
+  }
+
   return (
     <motion.div className='navigation-maincontainer'>
       <motion.div variants={ContainerVariant} initial="hidden" animate="show" className='navigation-container'>
         <motion.div variants={ElementVariant}>
           <NavLink className='navigation-name' to='/'>Resume Builder</NavLink>
         </motion.div>
-        <motion.div variants={ElementVariant}>
+        {!isLogin && <motion.div variants={ElementVariant}>
           <NavLink className='navigation-loginbutton' to='/login'>Log In</NavLink>
           <NavLink className='navigation-signupbutton' to='/signup'>Sign Up</NavLink>
-        </motion.div>
+        </motion.div>}
+        {isLogin && <motion.div variants={ElementVariant}>
+          <NavLink className='navigation-signupbutton' onClick={LogoutHandler} to='#'>Log Out</NavLink>
+        </motion.div>}
       </motion.div>
     </motion.div>
   )
