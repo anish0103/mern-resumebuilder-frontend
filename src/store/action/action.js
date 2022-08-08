@@ -26,6 +26,7 @@ export const LoginUser = data => {
             if (!response.ok) {
                 throw userdata.message
             }
+            console.log(userdata)
             dispatch({
                 type: LOGINUSER,
                 data: userdata
@@ -43,6 +44,31 @@ export const createUser = data => {
             const response = await fetch(BACKENDLINK + '/api/users/signup/', {
                 method: 'POST',
                 body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            const userdata = await response.json()
+            if (!response.ok) {
+                throw userdata.message
+            }
+            dispatch({
+                type: CREATEUSER,
+                data: userdata
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export const googleLoginSignup = data => {
+    return async dispatch => {
+        try {
+            // Send the Data To the backend
+            const response = await fetch(BACKENDLINK + '/api/users/googlelogin/', {
+                method: 'POST',
+                body: JSON.stringify({ token: data.credential }),
                 headers: {
                     'Content-Type': 'application/json'
                 },

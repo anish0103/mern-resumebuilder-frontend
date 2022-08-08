@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import '../LogInPage/LogInPage.css'
 import Loading from '../Loading/Loading';
 import SignUpImage from '../../assets/signup.jpg'
-import { createUser } from '../../store/action/action';
+import { createUser, googleLoginSignup } from '../../store/action/action';
 
 const SignUpPage = () => {
   const [loading, setLoading] = useState(false)
@@ -64,18 +64,14 @@ const SignUpPage = () => {
   }
 
   const googlesigninhandler = async data => {
-    const response = await fetch("https://anish-react-google-login.herokuapp.com/googlesignin", {
-      method: 'POST',
-      body: JSON.stringify({ token: data.credential }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    const responsedata = await response.json()
-    if (!response.ok) {
-      return alert("Something went wrong! Try again later.")
+    try {
+      setLoading(true)
+      await dispatch(googleLoginSignup(data))
+      setLoading(false)
+    } catch (error) {
+      setLoading(false)
+      return console.log(error)
     }
-    console.log(responsedata)
   }
 
   const SignupHandler = async () => {
