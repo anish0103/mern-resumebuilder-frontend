@@ -1,10 +1,13 @@
 import { React, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useDispatch } from 'react-redux';
+import { useParams, useHistory } from 'react-router-dom';
 import ControlPointRoundedIcon from '@mui/icons-material/ControlPointRounded';
 import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 
-import Loading from '../Loading/Loading'
 import './AddInformationPage.css'
+import Loading from '../Loading/Loading'
+import { addInformationForm } from '../../store/action/action';
 
 const AddInformationPage = () => {
     const [loading, setLoading] = useState(false)
@@ -14,6 +17,9 @@ const AddInformationPage = () => {
         Projects: [],
         Skills: []
     })
+    let { userid } = useParams();
+    const history = useHistory();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -80,8 +86,11 @@ const AddInformationPage = () => {
         }
     }
 
-    const SubmitHandler = () => {
-        console.log(formData)
+    const SubmitHandler = async () => {
+        setLoading(true)
+        await dispatch(addInformationForm(formData, userid))
+        setLoading(false)
+        history.replace('/')
     }
 
     const EducationAddHandler = () => {
@@ -303,7 +312,7 @@ const AddInformationPage = () => {
                     </div>}
                     <motion.div variants={SubElementVariant} className='personalinformation-actionbuttoncontainer'>
                         <button onClick={SubmitHandler}>Save</button>
-                        <button>Cancel</button>
+                        <button onClick={()=> history.replace('/')}>Cancel</button>
                     </motion.div>
                 </motion.div>
             </div>

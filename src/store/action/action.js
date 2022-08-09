@@ -1,6 +1,8 @@
 export const LOGINSTATUS = "LOGINSTATUS"
 export const LOGINUSER = "LOGINUSER"
 export const CREATEUSER = "CREATEUSER"
+export const GETUSERBYID = "GETUSERBYID"
+export const UPDATEUSERINFORMATION = "UPDATEUSERINFORMATION"
 
 const BACKENDLINK = "http://localhost:8080"
 
@@ -26,7 +28,6 @@ export const LoginUser = data => {
             if (!response.ok) {
                 throw userdata.message
             }
-            console.log(userdata)
             dispatch({
                 type: LOGINUSER,
                 data: userdata
@@ -77,9 +78,52 @@ export const googleLoginSignup = data => {
             if (!response.ok) {
                 throw userdata.message
             }
-            console.log(userdata)
             dispatch({
                 type: CREATEUSER,
+                data: userdata
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export const addInformationForm = (data, id) => {
+    return async dispatch => {
+        try {
+            // Send the Data To the backend
+            const response = await fetch(BACKENDLINK + `/api/users/addinformation/${id}`, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            const userdata = await response.json()
+            if (!response.ok) {
+                throw userdata.message
+            }
+            dispatch({
+                type: UPDATEUSERINFORMATION,
+                data: userdata
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export const getUserById = id => {
+    return async dispatch => {
+        try {
+            // Get the data of the user by passing the id of the user
+            const response = await fetch(BACKENDLINK + `/api/users/${id}`)
+            const userdata = await response.json();
+            if (!response.ok) {
+                throw userdata.message
+            }
+            dispatch({
+                type: GETUSERBYID,
                 data: userdata
             })
         } catch (error) {
