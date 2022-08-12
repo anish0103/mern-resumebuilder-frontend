@@ -1,0 +1,113 @@
+.template1-maincontainer {
+  width: 100%;
+  height: fit-content;
+}
+.template1-generalinformationcontainer {
+  background-color: #313c4e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.template1-generalinformation-namecontainer {
+  width: 95%;
+  margin: 5px 0;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+}
+.template1-generalinformation-roletitlecontainer {
+  color: #449399;
+  font-size: 30px;
+  margin-left: 20px;
+}
+.template1-generalinformation-descriptioncontainer {
+  width: 95%;
+  margin: 5px 0;
+  margin-bottom: 10px;
+}
+.template1-personalinformationcontainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #222a33;
+  color: white;
+}
+.template1-personalinformationsubcontainer {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.template1-personalinformation-detailcontainer {
+  width: 50%;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+}
+.template1-personalinformation-detailcontainer a {
+  color: white;
+  text-decoration: none;
+}
+.template1-personalinformation-detailcontainer svg {
+  margin-right: 10px;
+}
+.template1-professionalinformationcontainer {
+  display: flex;
+  font-weight: 500;
+  margin: 5px 0;
+  justify-content: center;
+}
+.template1-professionalinformationsubcontainer {
+  width: 95%;
+  display: flex;
+}
+.template1-professionalinformation-leftcontainer,
+.template1-professionalinformation-rightcontainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.template1-professionalinformation-title {
+  margin: 10px 0;
+  color: #449399;
+  font-size: 25px;
+  width: fit-content;
+  border-bottom: 4px solid #449399;
+}
+.template1-educationcontainer-coursename,
+.template1-educationcontainer-schoolname,
+.template1-educationcontainer-duration,
+.template1-expcontainer-rolename,
+.template1-expcontainer-companyname,
+.template1-expcontainer-duration,
+.template1-projectcontainer-name {
+  margin: 8px 0;
+  font-size: 18px;
+}
+.template1-educationcontainer-coursename,
+.template1-expcontainer-rolename {
+  font-weight: 700;
+}
+.template1-educationcontainer-duration,
+.template1-expcontainer-duration {
+  font-size: 14px;
+  color: #449399;
+  font-style: italic;
+}
+.template1-skillcontainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.template1-skillcontainer p {
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: white;
+  margin: 0;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  background-color: #989da6;
+}
+.template1-projectcontainer-link {
+  margin: 8px 0;
+  color: #449399;
+}

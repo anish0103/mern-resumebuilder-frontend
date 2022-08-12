@@ -11,6 +11,7 @@ import SignUpPage from './Pages/SignUpPage/SignUpPage';
 import AddInformationPage from './Pages/AddInformationPage/AddInformationPage';
 import DashBoard from './Pages/DashBoard/DashBoard';
 import Loading from './Pages/Loading/Loading';
+import Template1 from './Pages/ResumeTemplates/Template1/Template1';
 import { getUserById } from './store/action/action';
 
 function App() {
@@ -33,10 +34,13 @@ function App() {
     }
   }, [])
 
+  if (loading) {
+    return <Loading />
+  }
+
   return (
     <>
       <Navigation />
-      {loading && <Loading />}
       <AnimatePresence exitBeforeEnter>
         {!isLogin && <Switch location={location} key={location.pathname}>
           <Route path="/" exact>
@@ -47,6 +51,12 @@ function App() {
           </Route>
           <Route path="/signup" exact>
             <SignUpPage />
+          </Route>
+          <Route path="/template" exact>
+            <Template1 />
+          </Route>
+          <Route path="/addinformation/">
+            <AddInformationPage />
           </Route>
           <Redirect to="/" />
         </Switch>}
