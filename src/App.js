@@ -12,6 +12,7 @@ import AddInformationPage from './Pages/AddInformationPage/AddInformationPage';
 import DashBoard from './Pages/DashBoard/DashBoard';
 import Loading from './Pages/Loading/Loading';
 import Template1 from './Pages/ResumeTemplates/Template1/Template1';
+import Template2 from './Pages/ResumeTemplates/Template2/Template2';
 import { getUserById } from './store/action/action';
 
 function App() {
@@ -53,7 +54,7 @@ function App() {
             <SignUpPage />
           </Route>
           <Route path="/template" exact>
-            <Template1 />
+            <Template2 />
           </Route>
           <Route path="/addinformation/">
             <AddInformationPage />

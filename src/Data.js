@@ -27,5 +27,5 @@ export const Data = {
         Name: "Resume Builder",
         Link: "https://resumebuilder.com"
     }],
-    Skills: ["React JS", "Node JS"]
+    Skills: ["React JS", "Node JS", "Express JS", "MongoDB", "React Native", "Framer Motion"]
 }

@@ -1,0 +1,134 @@
+.template2-maincontainer {
+  width: 100%;
+  height: fit-content;
+}
+.template2-generalinformationcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.template2-generalinformation-namecontainer {
+  margin: 5px 0;
+  font-size: 40px;
+  display: flex;
+  color: #313c4e;
+  align-items: center;
+}
+.template2-generalinformation-roletitlecontainer {
+  color: #449399;
+  font-size: 30px;
+  margin-left: 20px;
+}
+.template2-generalinformation-descriptioncontainer {
+  margin: 5px 0;
+  margin-bottom: 10px;
+}
+.template2-generalinformationsubcontainer {
+  border-radius: 10px;
+  border-left: 2px solid #313c4e;
+  border-right: 2px solid #313c4e;
+  border-bottom: 2px solid #313c4e;
+  width: 90%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.template2-personalinformationcontainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+.template2-personalinformationsubcontainer {
+  width: 90%;
+  background-color: #313c4e;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+}
+.template2-personalinformation-detailcontainer {
+  width: 50%;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+}
+.template2-personalinformation-detailcontainer a {
+  color: white;
+  text-decoration: none;
+}
+.template2-personalinformation-detailcontainer svg {
+  margin-right: 10px;
+  color: #449399;
+}
+.template2-professionalinformationcontainer {
+  display: flex;
+  font-weight: 500;
+  margin: 5px 0;
+  justify-content: center;
+}
+.template2-professionalinformationsubcontainer {
+  width: 90%;
+  display: flex;
+}
+.template2-professionalinformation-leftcontainer,
+.template2-professionalinformation-rightcontainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.template2-professionalinformation-title {
+  margin: 10px 0;
+  color: #313c4e;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+.template2-professionalinformation-title svg {
+  margin-right: 10px;
+  font-size: 25px;
+  padding: 5px;
+  border-radius: 8px;
+  border-left: 2px solid #313c4e;
+  border-right: 2px solid #313c4e;
+  border-bottom: 2px solid #313c4e;
+}
+.template2-educationcontainer-coursename,
+.template2-educationcontainer-schoolname,
+.template2-educationcontainer-duration,
+.template2-expcontainer-rolename,
+.template2-expcontainer-companyname,
+.template2-expcontainer-duration,
+.template2-projectcontainer-name {
+  margin: 8px 0;
+  font-size: 18px;
+}
+.template2-educationcontainer-coursename,
+.template2-expcontainer-rolename {
+  font-weight: 700;
+}
+.template2-educationcontainer-duration,
+.template2-expcontainer-duration {
+  font-size: 14px;
+  color: #313c4e;
+  font-style: italic;
+}
+.template2-skillcontainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.template2-skillcontainer p {
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: white;
+  margin: 0;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  background-color: #989da6;
+}
+.template2-projectcontainer-link {
+  margin: 8px 0;
+  color: #313c4e;
+}

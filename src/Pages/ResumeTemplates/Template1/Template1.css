@@ -5,12 +5,13 @@
 .template1-generalinformationcontainer {
   background-color: #313c4e;
   color: white;
+  padding: 5px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .template1-generalinformation-namecontainer {
-  width: 95%;
+  width: 90%;
   margin: 5px 0;
   font-size: 40px;
   display: flex;
@@ -22,11 +23,12 @@
   margin-left: 20px;
 }
 .template1-generalinformation-descriptioncontainer {
-  width: 95%;
+  width: 90%;
   margin: 5px 0;
   margin-bottom: 10px;
 }
 .template1-personalinformationcontainer {
+  padding: 5px 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -34,7 +36,7 @@
   color: white;
 }
 .template1-personalinformationsubcontainer {
-  width: 95%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -58,7 +60,7 @@
   justify-content: center;
 }
 .template1-professionalinformationsubcontainer {
-  width: 95%;
+  width: 90%;
   display: flex;
 }
 .template1-professionalinformation-leftcontainer,
