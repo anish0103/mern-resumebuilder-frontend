@@ -3,6 +3,7 @@ export const LOGINUSER = "LOGINUSER"
 export const CREATEUSER = "CREATEUSER"
 export const GETUSERBYID = "GETUSERBYID"
 export const UPDATEUSERINFORMATION = "UPDATEUSERINFORMATION"
+export const CHOOSETEMPLATE = "CHOOSETEMPLATE"
 
 const BACKENDLINK = "http://localhost:8080"
 
@@ -124,6 +125,31 @@ export const getUserById = id => {
             }
             dispatch({
                 type: GETUSERBYID,
+                data: userdata
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export const chooseTemplate = data => {
+    return async dispatch => {
+        try {
+            // Check the user and perform login 
+            const response = await fetch(BACKENDLINK + '/api/users/choosetemplate/', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            const userdata = await response.json()
+            if (!response.ok) {
+                throw userdata.message
+            }
+            dispatch({
+                type: CHOOSETEMPLATE,
                 data: userdata
             })
         } catch (error) {

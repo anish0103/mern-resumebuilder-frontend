@@ -10,7 +10,7 @@ import WorkRoundedIcon from '@mui/icons-material/WorkRounded';
 import PsychologyRoundedIcon from '@mui/icons-material/PsychologyRounded';
 import EngineeringRoundedIcon from '@mui/icons-material/EngineeringRounded';
 
-import { Data } from '../../../Data'
+import { Data } from '../../../../Data'
 import './Template2.css'
 
 const Template2 = () => {

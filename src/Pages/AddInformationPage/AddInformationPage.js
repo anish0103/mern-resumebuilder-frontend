@@ -87,10 +87,14 @@ const AddInformationPage = () => {
     }
 
     const SubmitHandler = async () => {
-        setLoading(true)
-        await dispatch(addInformationForm(formData, userid))
-        setLoading(false)
-        history.replace('/')
+        if (formData?.Name !== undefined || formData?.RoleTitle !== undefined || formData?.Description !== undefined || formData?.Email !== undefined || formData?.PhoneNumber !== undefined || formData?.Location !== undefined || formData?.Email !== undefined || formData.Education.length !== 0 || formData.Skills.length !== 0) {
+            setLoading(true)
+            await dispatch(addInformationForm(formData, userid))
+            setLoading(false)
+            history.replace('/choosetemplate')
+        } else {
+            alert("Please Enter Basic Details such as Name, RoleTitle, Description, Email, Phone Number, Location, Education And Skills")
+        }
     }
 
     const EducationAddHandler = () => {
@@ -312,7 +316,7 @@ const AddInformationPage = () => {
                     </div>}
                     <motion.div variants={SubElementVariant} className='personalinformation-actionbuttoncontainer'>
                         <button onClick={SubmitHandler}>Save</button>
-                        <button onClick={()=> history.replace('/')}>Cancel</button>
+                        <button onClick={() => history.replace('/')}>Cancel</button>
                     </motion.div>
                 </motion.div>
             </div>

@@ -6,7 +6,7 @@ import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
 import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
 import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
 
-import { Data } from '../../../Data'
+import { Data } from '../../../../Data'
 import './Template1.css'
 
 const Template1 = () => {

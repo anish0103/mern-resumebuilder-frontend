@@ -11,8 +11,8 @@ import SignUpPage from './Pages/SignUpPage/SignUpPage';
 import AddInformationPage from './Pages/AddInformationPage/AddInformationPage';
 import DashBoard from './Pages/DashBoard/DashBoard';
 import Loading from './Pages/Loading/Loading';
-import Template1 from './Pages/ResumeTemplates/Template1/Template1';
-import Template2 from './Pages/ResumeTemplates/Template2/Template2';
+import Template2 from './Pages/TemplatePages/ResumeTemplates/Template2/Template2';
+import ChooseTemplatePage from './Pages/TemplatePages/ChooseTemplatePage';
 import { getUserById } from './store/action/action';
 
 function App() {
@@ -29,7 +29,6 @@ function App() {
 
   useEffect(() => {
     const userid = localStorage.getItem("resumebuilder")
-    console.log(userid)
     if (userid !== null) {
       FetchUserData(userid)
     }
@@ -56,8 +55,8 @@ function App() {
           <Route path="/template" exact>
             <Template2 />
           </Route>
-          <Route path="/addinformation/">
-            <AddInformationPage />
+          <Route path="/choosetemplate/" exact>
+            <ChooseTemplatePage />
           </Route>
           <Redirect to="/" />
         </Switch>}
@@ -67,6 +66,9 @@ function App() {
           </Route>
           <Route path="/addinformation/:userid">
             <AddInformationPage />
+          </Route>
+          <Route path="/choosetemplate/" exact>
+            <ChooseTemplatePage />
           </Route>
           <Redirect to="/" />
         </Switch>}
