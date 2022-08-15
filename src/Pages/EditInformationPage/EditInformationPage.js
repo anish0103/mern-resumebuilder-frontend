@@ -1,15 +1,14 @@
 import { React, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { useDispatch } from 'react-redux';
-import { useParams, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import ControlPointRoundedIcon from '@mui/icons-material/ControlPointRounded';
 import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 
-import './AddInformationPage.css'
 import Loading from '../Loading/Loading'
 import { addInformationForm } from '../../store/action/action';
 
-const AddInformationPage = () => {
+const EditInformationPage = () => {
     const [loading, setLoading] = useState(false)
     const [formData, setFormData] = useState({
         Education: [],
@@ -17,10 +16,14 @@ const AddInformationPage = () => {
         Projects: [],
         Skills: []
     })
-
-    let { userid } = useParams();
     const history = useHistory();
     const dispatch = useDispatch();
+
+    const UserData = useSelector(state => state.userData)
+
+    useEffect(() => {
+        setFormData(UserData.Details[0])
+    }, [])
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -90,9 +93,9 @@ const AddInformationPage = () => {
     const SubmitHandler = async () => {
         if (formData?.Name !== undefined || formData?.RoleTitle !== undefined || formData?.Description !== undefined || formData?.Email !== undefined || formData?.PhoneNumber !== undefined || formData?.Location !== undefined || formData?.Email !== undefined || formData.Education.length !== 0 || formData.Skills.length !== 0) {
             setLoading(true)
-            await dispatch(addInformationForm(formData, userid))
+            await dispatch(addInformationForm(formData, UserData?._id))
             setLoading(false)
-            history.replace('/choosetemplate')
+            history.replace('/')
         } else {
             alert("Please Enter Basic Details such as Name, RoleTitle, Description, Email, Phone Number, Location, Education And Skills")
         }
@@ -119,7 +122,7 @@ const AddInformationPage = () => {
     }
 
     const ProjectAddHandler = () => {
-        formData.Projects.push({ Role: "", Company: "", StartDate: "", EndDate: "" })
+        formData.Projects.push({ Name: "", Link: "" })
         setFormData({ ...formData, Projects: formData.Projects })
     }
 
@@ -325,4 +328,4 @@ const AddInformationPage = () => {
     )
 }
 
-export default AddInformationPage
+export default EditInformationPage

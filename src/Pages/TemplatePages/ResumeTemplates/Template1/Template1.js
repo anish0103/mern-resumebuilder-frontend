@@ -1,4 +1,4 @@
-import React from 'react'
+import { React } from 'react'
 import { motion } from 'framer-motion'
 import MailRoundedIcon from '@mui/icons-material/MailRounded';
 import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
@@ -6,10 +6,11 @@ import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
 import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
 import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
 
-import { Data } from '../../../../Data'
 import './Template1.css'
 
-const Template1 = () => {
+const Template1 = props => {
+  const Data = props.Data;
+
   const ContainerVariant = {
     hidden: {
       opacity: 0

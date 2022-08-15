@@ -1,4 +1,4 @@
-import React from 'react'
+import { React } from 'react'
 import { motion } from 'framer-motion'
 import MailRoundedIcon from '@mui/icons-material/MailRounded';
 import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
@@ -10,10 +10,11 @@ import WorkRoundedIcon from '@mui/icons-material/WorkRounded';
 import PsychologyRoundedIcon from '@mui/icons-material/PsychologyRounded';
 import EngineeringRoundedIcon from '@mui/icons-material/EngineeringRounded';
 
-import { Data } from '../../../../Data'
 import './Template2.css'
 
-const Template2 = () => {
+const Template2 = props => {
+    const Data = props.Data;
+
     const ContainerVariant = {
         hidden: {
             opacity: 0

@@ -5,7 +5,7 @@ export const GETUSERBYID = "GETUSERBYID"
 export const UPDATEUSERINFORMATION = "UPDATEUSERINFORMATION"
 export const CHOOSETEMPLATE = "CHOOSETEMPLATE"
 
-const BACKENDLINK = "http://localhost:8080"
+export const BACKENDLINK = "http://localhost:8080"
 
 export const LoginStatusHandler = data => {
     return {

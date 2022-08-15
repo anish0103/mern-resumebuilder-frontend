@@ -9,9 +9,10 @@ import HomePage from './Pages/HomePage/HomePage';
 import LogInPage from './Pages/LogInPage/LogInPage';
 import SignUpPage from './Pages/SignUpPage/SignUpPage';
 import AddInformationPage from './Pages/AddInformationPage/AddInformationPage';
+import EditInformationPage from './Pages/EditInformationPage/EditInformationPage';
 import DashBoard from './Pages/DashBoard/DashBoard';
 import Loading from './Pages/Loading/Loading';
-import Template2 from './Pages/TemplatePages/ResumeTemplates/Template2/Template2';
+import TemplatePage from './Pages/TemplatePages/TemplatePage';
 import ChooseTemplatePage from './Pages/TemplatePages/ChooseTemplatePage';
 import { getUserById } from './store/action/action';
 
@@ -52,11 +53,8 @@ function App() {
           <Route path="/signup" exact>
             <SignUpPage />
           </Route>
-          <Route path="/template" exact>
-            <Template2 />
-          </Route>
-          <Route path="/choosetemplate/" exact>
-            <ChooseTemplatePage />
+          <Route path="/resume/:userId" exact>
+            <TemplatePage />
           </Route>
           <Redirect to="/" />
         </Switch>}
@@ -64,11 +62,17 @@ function App() {
           <Route path="/" exact>
             <DashBoard />
           </Route>
-          <Route path="/addinformation/:userid">
+          <Route path="/editinformation/" exact>
+            <EditInformationPage />
+          </Route>
+          <Route path="/addinformation/:userid" exact>
             <AddInformationPage />
           </Route>
           <Route path="/choosetemplate/" exact>
             <ChooseTemplatePage />
+          </Route>
+          <Route path="/resume/:userId" exact>
+            <TemplatePage />
           </Route>
           <Redirect to="/" />
         </Switch>}
