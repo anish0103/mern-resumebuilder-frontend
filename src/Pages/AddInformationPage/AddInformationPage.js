@@ -226,7 +226,7 @@ const AddInformationPage = () => {
                                     <div className='personalinformation-deletebuttoncontainer'>
                                         <button className='personalinformation-deletebutton' onClick={() => EducationDeleteHandler(index)}><DeleteRoundedIcon /> Delete</button>
                                     </div>
-                                    <hr />
+                                    {/* <hr /> */}
                                 </>
                             )
                         })}
@@ -264,7 +264,7 @@ const AddInformationPage = () => {
                                     <div className='personalinformation-deletebuttoncontainer'>
                                         <button className='personalinformation-deletebutton' onClick={() => WorkDeleteHandler(index)}><DeleteRoundedIcon /> Delete</button>
                                     </div>
-                                    <hr />
+                                    {/* <hr /> */}
                                 </>
                             )
                         })}
@@ -292,7 +292,7 @@ const AddInformationPage = () => {
                                     <div className='personalinformation-deletebuttoncontainer'>
                                         <button className='personalinformation-deletebutton' onClick={() => ProjectDeleteHandler(index)}><DeleteRoundedIcon /> Delete</button>
                                     </div>
-                                    <hr />
+                                    {/* <hr /> */}
                                 </>
                             )
                         })}

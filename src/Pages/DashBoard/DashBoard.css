@@ -1,0 +1,70 @@
+.dashboard-maincontainer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+}
+.dashboard-leftcontainer {
+  width: 17%;
+  height: 100vh;
+  display: flex;
+  position: sticky;
+  top: 0;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: #1d1d20;
+}
+.dashboard-leftcontainer-namecontainer,
+.dashboard-leftcontainer-logoutcontainer {
+  height: 10%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+.dashboard-rightcontainer .personalinformation-container {
+  width: 95%;
+}
+.dashboard-leftcontainer-namecontainer {
+  font-size: 20px;
+}
+.dashboard-leftcontainer-buttoncontainer {
+  height: 80%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard-leftcontainer-buttoncontainer button,
+.dashboard-leftcontainer-logoutcontainer button {
+  background-color: transparent;
+  color: #a2a2a8;
+  border: none;
+  font-size: 15px;
+  outline: none;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 5px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 5px 0;
+  transition: 0.2s ease-in-out;
+}
+.dashboard-leftcontainer-buttoncontainer button:hover,
+.dashboard-leftcontainer-logoutcontainer button:hover {
+  background-color: #2e2e33 !important;
+  color: white !important;
+  cursor: pointer;
+}
+.activebutton {
+  background-color: #2e2e33 !important;
+  color: white !important;
+}
+.dashboard-leftcontainer-buttoncontainer button svg,
+.dashboard-leftcontainer-logoutcontainer button svg {
+  margin: 0 10px;
+}
+.dashboard-rightcontainer {
+  width: 83%;
+  height: 100%;
+}

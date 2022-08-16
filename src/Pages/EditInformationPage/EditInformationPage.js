@@ -36,8 +36,8 @@ const EditInformationPage = () => {
         show: {
             opacity: 1,
             transition: {
-                delayChildren: 0.6,
-                staggerChildren: 0.4,
+                delayChildren: 0.4,
+                staggerChildren: 0.2,
             }
         }
     }
@@ -51,7 +51,7 @@ const EditInformationPage = () => {
             opacity: 1,
             transition: {
                 type: "spring",
-                stiffness: 250
+                stiffness: 50
             }
         }
     }
@@ -65,7 +65,7 @@ const EditInformationPage = () => {
             opacity: 1,
             transition: {
                 type: "spring",
-                stiffness: 250
+                stiffness: 50
             }
         }
     }
@@ -229,7 +229,7 @@ const EditInformationPage = () => {
                                     <div className='personalinformation-deletebuttoncontainer'>
                                         <button className='personalinformation-deletebutton' onClick={() => EducationDeleteHandler(index)}><DeleteRoundedIcon /> Delete</button>
                                     </div>
-                                    <hr />
+                                    {/* <hr /> */}
                                 </>
                             )
                         })}
@@ -267,7 +267,7 @@ const EditInformationPage = () => {
                                     <div className='personalinformation-deletebuttoncontainer'>
                                         <button className='personalinformation-deletebutton' onClick={() => WorkDeleteHandler(index)}><DeleteRoundedIcon /> Delete</button>
                                     </div>
-                                    <hr />
+                                    {/* <hr /> */}
                                 </>
                             )
                         })}
@@ -295,7 +295,7 @@ const EditInformationPage = () => {
                                     <div className='personalinformation-deletebuttoncontainer'>
                                         <button className='personalinformation-deletebutton' onClick={() => ProjectDeleteHandler(index)}><DeleteRoundedIcon /> Delete</button>
                                     </div>
-                                    <hr />
+                                    {/* <hr /> */}
                                 </>
                             )
                         })}

@@ -34,7 +34,7 @@ const ChooseTemplatePage = () => {
     show: {
         opacity: 1,
         transition: {
-            delayChildren: 0.4,
+            delayChildren: 0.1,
             staggerChildren: 0.2,
         }
     }
@@ -49,7 +49,7 @@ const ElementVariant = {
         opacity: 1,
         transition: {
             type: "spring",
-            stiffness: 250
+            stiffness: 50
         }
     }
 }
@@ -63,7 +63,7 @@ const SubElementVariant = {
         opacity: 1,
         transition: {
             type: "spring",
-            stiffness: 150
+            stiffness: 50
         }
     }
 }
