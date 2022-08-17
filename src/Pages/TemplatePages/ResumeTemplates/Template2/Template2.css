@@ -1,6 +1,7 @@
 .template2-maincontainer {
   width: 100%;
   height: fit-content;
+  font-family: 'Ubuntu' !important;
 }
 .template2-generalinformationcontainer {
   display: flex;
@@ -10,6 +11,7 @@
 }
 .template2-generalinformation-namecontainer {
   margin: 5px 0;
+  font-weight: 300;
   font-size: 40px;
   display: flex;
   color: #313c4e;
@@ -17,6 +19,7 @@
 }
 .template2-generalinformation-roletitlecontainer {
   color: #449399;
+  font-weight: 400;
   font-size: 30px;
   margin-left: 20px;
 }
@@ -124,6 +127,7 @@
   border-radius: 8px;
   color: white;
   margin: 0;
+  font-weight: 400;
   margin-right: 15px;
   margin-bottom: 10px;
   background-color: #989da6;

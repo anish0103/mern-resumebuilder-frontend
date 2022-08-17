@@ -1,0 +1,31 @@
+.dashboardpage-maincontainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+.dashboardpage-container {
+  width: 95%;
+  height: 100%;
+}
+.dashboardpage-greetingcontainer {
+  margin-top: 25px;
+  width: 100%;
+  height: 25%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #246bfb;
+}
+.dashboardpage-greetingtext {
+  margin: 0;
+  font-size: 30px;
+}
+.dashboardpage-welcometext {
+  margin: 0;
+  font-size: 40px;
+}

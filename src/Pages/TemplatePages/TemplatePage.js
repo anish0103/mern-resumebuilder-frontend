@@ -34,8 +34,6 @@ const TemplatePage = () => {
         }
     }
 
-    console.log(template, Data)
-
     useEffect(() => {
         FetchUserDataHandler(userId)
     }, [])
