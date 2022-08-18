@@ -15,11 +15,11 @@
   box-sizing: border-box;
   border-radius: 10px;
   padding: 15px;
-  color: white;
+  color: #35393d;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #246bfb;
+  border: 2px solid #246bfb;
 }
 .dashboardpage-greetingtext {
   margin: 0;
@@ -28,4 +28,46 @@
 .dashboardpage-welcometext {
   margin: 0;
   font-size: 40px;
+}
+.dashboardpage-informationcontainer {
+  margin-top: 25px;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+.dashboardpage-viewcountcontainer, .dashboardpage-copylinkcontainer {
+  border-radius: 10px;
+  /* margin-right: 20px; */
+  word-break: break-all;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  color: #35393d;
+  width: 25%;
+  border: 2px solid #a2a2a8;
+}
+.dashboardpage-viewcountcontainer-viewtext {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dashboardpage-viewcountcontainer-counttext {
+  margin: 0;
+  font-size: 150px;
+}
+.dashboardpage-viewcountcontainer-linktext a {
+  text-decoration: none;
+  color: #246bfb;
+  font-size: 20px;
+}
+.dashboardpage-viewcountcontainer-viewtext svg {
+  transition: 0.2s ease-in-out;
+}
+.dashboardpage-viewcountcontainer-viewtext svg:hover {
+  color: #246bfb;
+  cursor: pointer;
 }

@@ -26,6 +26,7 @@ const TemplatePage = () => {
                 throw userdata.message
             }
             setData(userdata.Details[0])
+
             setTemplate(userdata.Template)
             setLoading(false)
         } catch (error) {
@@ -43,7 +44,7 @@ const TemplatePage = () => {
     }
 
     return (
-        <div>{template === "Template1" ? <Template1 Data={Data} /> : <Template2 Data={Data}/>}</div>
+        <div>{template === "Template1" ? <Template1 id={userId} Data={Data} /> : <Template2 id={userId} Data={Data}/>}</div>
     )
 }
 

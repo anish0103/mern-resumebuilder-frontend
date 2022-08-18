@@ -219,8 +219,8 @@ const AddInformationPage = () => {
                                             <input value={data?.StartDate} onChange={(e) => DataHandler("Education", e.target.value, index, "StartDate")} type="date" placeholder='Enter your starting date' />
                                         </div>
                                         <div className='personalinformation-inputcontainer'>
-                                            <label>Ending Date</label>
-                                            <input value={data?.EndDate} onChange={(e) => DataHandler("Education", e.target.value, index, "EndDate")} type="date" placeholder='Enter your ending date' />
+                                            <label className='personalinformation-inputcontainer-enddatecontainer'>Ending Date <div><input type="checkbox" onChange={(e) => e.target.checked ? DataHandler("Education", "Present", index, "EndDate") : DataHandler("Education", "", index, "EndDate")} />Present</div></label>
+                                            {data?.EndDate === "Present" ? <input disabled value={data?.EndDate} onChange={(e) => DataHandler("Education", e.target.value, index, "EndDate")} type="date" placeholder='Enter your ending date' /> : <input value={data?.EndDate} onChange={(e) => DataHandler("Education", e.target.value, index, "EndDate")} type="date" placeholder='Enter your ending date' />}
                                         </div>
                                     </div>
                                     <div className='personalinformation-deletebuttoncontainer'>
@@ -257,8 +257,8 @@ const AddInformationPage = () => {
                                             <input value={data?.StartDate} onChange={(e) => DataHandler("Work", e.target.value, index, "StartDate")} type="date" placeholder='Enter your starting date' />
                                         </div>
                                         <div className='personalinformation-inputcontainer'>
-                                            <label>Ending Date</label>
-                                            <input value={data?.EndDate} onChange={(e) => DataHandler("Work", e.target.value, index, "EndDate")} type="date" placeholder='Enter your ending date' />
+                                            <label className='personalinformation-inputcontainer-enddatecontainer'>Ending Date <div><input type="checkbox" onChange={(e) => e.target.checked ? DataHandler("Work", "Present", index, "EndDate") : DataHandler("Work", "", index, "EndDate")} />Present</div></label>
+                                            {data?.EndDate === "Present" ? <input disabled value={data?.EndDate} onChange={(e) => DataHandler("Work", e.target.value, index, "EndDate")} type="date" placeholder='Enter your ending date' /> : <input value={data?.EndDate} onChange={(e) => DataHandler("Work", e.target.value, index, "EndDate")} type="date" placeholder='Enter your ending date' />}
                                         </div>
                                     </div>
                                     <div className='personalinformation-deletebuttoncontainer'>

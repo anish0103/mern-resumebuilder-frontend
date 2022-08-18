@@ -1,5 +1,6 @@
-import { React } from 'react'
+import { React, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import io from 'socket.io-client'
 import MailRoundedIcon from '@mui/icons-material/MailRounded';
 import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
 import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
@@ -7,8 +8,24 @@ import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
 import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
 
 import './Template1.css'
+import { BACKENDLINK } from '../../../../store/action/action'
+
+let socket;
 
 const Template1 = props => {
+
+  useEffect(() => {
+    socket = io(BACKENDLINK)
+  }, [])
+
+  useEffect(() => {
+    if (socket) {
+      socket.on('connect', () => {
+        socket.emit('updatecount', { id: props.id })
+      });
+    }
+  }, [])
+
   const Data = props.Data;
 
   const ContainerVariant = {
@@ -82,7 +99,7 @@ const Template1 = props => {
               {Data.Education.map(data => <motion.div variants={SubElementVariant} style={{ marginBottom: '20px' }}>
                 <p className='template1-educationcontainer-coursename'>{data.Name}</p>
                 <p className='template1-educationcontainer-schoolname'>{data.SchoolName}</p>
-                <p className='template1-educationcontainer-duration'>{data.StartDate} - {data.EndDate}</p>
+                <p className='template1-educationcontainer-duration'>{data.StartDate.substr(5, 2)}/{data.StartDate.substr(0, 4)} - {data.EndDate === "Present" ? "Present" : `${data.EndDate.substr(5, 2)}/${data.EndDate.substr(0, 4)}`}</p>
               </motion.div>)}
             </motion.div>}
             {Data.Work.length > 0 && <motion.div variants={ContainerVariant} className='template1-professionalinformation-expcontainer'>
@@ -90,7 +107,7 @@ const Template1 = props => {
               {Data.Work.map(data => <motion.div variants={SubElementVariant} style={{ marginBottom: '20px' }}>
                 <p className='template1-expcontainer-rolename'>{data.Role}</p>
                 <p className='template1-expcontainer-companyname'>{data.Company}</p>
-                <p className='template1-expcontainer-duration'>{data.StartDate} - {data.EndDate}</p>
+                <p className='template1-expcontainer-duration'>{data.StartDate.substr(5, 2)}/{data.StartDate.substr(0, 4)} - {data.EndDate === "Present" ? "Present" : `${data.EndDate.substr(5, 2)}/${data.EndDate.substr(0, 4)}`}</p>
               </motion.div>)}
             </motion.div>}
           </div>

@@ -138,3 +138,12 @@
   display: flex;
   justify-content: flex-end;
 }
+.personalinformation-inputcontainer-enddatecontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.personalinformation-inputcontainer-enddatecontainer input {
+  margin: 0;
+  margin-right: 5px;
+}

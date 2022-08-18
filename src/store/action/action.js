@@ -4,6 +4,7 @@ export const CREATEUSER = "CREATEUSER"
 export const GETUSERBYID = "GETUSERBYID"
 export const UPDATEUSERINFORMATION = "UPDATEUSERINFORMATION"
 export const CHOOSETEMPLATE = "CHOOSETEMPLATE"
+export const RESETVIEWCOUNT = "RESETVIEWCOUNT"
 
 export const BACKENDLINK = "http://localhost:8080"
 
@@ -150,6 +151,31 @@ export const chooseTemplate = data => {
             }
             dispatch({
                 type: CHOOSETEMPLATE,
+                data: userdata
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export const resetViewCount = data => {
+    return async dispatch => {
+        try {
+            const response = await fetch(BACKENDLINK + '/api/users/resetviewcount/', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            const userdata = await response.json()
+            if (!response.ok) {
+                throw userdata.message
+            }
+            console.log(userdata)
+            dispatch({
+                type: RESETVIEWCOUNT,
                 data: userdata
             })
         } catch (error) {

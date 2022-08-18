@@ -1,4 +1,4 @@
-import { LOGINSTATUS, LOGINUSER, CREATEUSER, GETUSERBYID, UPDATEUSERINFORMATION, CHOOSETEMPLATE } from "../action/action"
+import { LOGINSTATUS, LOGINUSER, CREATEUSER, GETUSERBYID, UPDATEUSERINFORMATION, CHOOSETEMPLATE, RESETVIEWCOUNT } from "../action/action"
 
 const initialstate = {
     userData: [],
@@ -21,6 +21,8 @@ const Reducer = (state = initialstate, action) => {
         case UPDATEUSERINFORMATION:
             return { ...state, userData: action.data }
         case CHOOSETEMPLATE:
+            return { ...state, userData: action.data }
+        case RESETVIEWCOUNT:
             return { ...state, userData: action.data }
         default:
             return state
