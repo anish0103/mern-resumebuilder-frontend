@@ -19,7 +19,6 @@ const DashBoard = () => {
   const dispatch = useDispatch()
 
   const UserData = useSelector(state => state.userData)
-  console.log(UserData)
 
   const LogoutHandler = () => {
     dispatch(LoginStatusHandler(false))

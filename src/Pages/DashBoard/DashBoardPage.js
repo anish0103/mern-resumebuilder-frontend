@@ -102,9 +102,9 @@ const DashBoardPage = props => {
                             <motion.p variants={ContainerVariant} className='dashboardpage-viewcountcontainer-viewtext'>Your Resume Link <div title='copy to clipboard' onClick={CopyToClipboardHandler}><CopyAllRoundedIcon /></div></motion.p>
                             <motion.p variants={ContainerVariant} className='dashboardpage-viewcountcontainer-linktext'><a target="_blank" rel="noreferrer" href={window.location.href + "resume/" + props.id}>View Your Resume</a></motion.p>
                         </motion.div>
-                        <motion.div variants={ContainerVariant} className='dashboardpage-copylinkcontainer'>
+                        {/* <motion.div variants={ContainerVariant} className='dashboardpage-copylinkcontainer'>
 
-                        </motion.div>
+                        </motion.div> */}
                     </motion.div>
                 </motion.div>
             </div>

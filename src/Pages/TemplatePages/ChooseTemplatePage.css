@@ -55,3 +55,17 @@
 .choosetemplatepage-template:hover .choosetemplatepage-image {
   transform: scale(1.1);
 }
+@media screen and (max-width: 480px) {
+  .choosetemplatepage-templatescontainer {
+    flex-direction: column;
+  }
+  .choosetemplatepage-template {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .choosetemplatepage-template {
+    width: 48%;
+  }
+}

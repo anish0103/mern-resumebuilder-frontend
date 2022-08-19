@@ -117,3 +117,30 @@
   margin: 8px 0;
   color: #449399;
 }
+@media screen and (max-width: 480px) {
+  .template1-generalinformation-namecontainer {
+    flex-direction: column;
+  }
+  .template1-professionalinformationsubcontainer {
+    flex-direction: column;
+  }
+  .template1-professionalinformation-leftcontainer,
+  .template1-professionalinformation-rightcontainer {
+    width: 100%;
+  }
+  .template1-generalinformation-roletitlecontainer {
+    font-size: 25px;
+    margin-left: 0;
+  }
+  .template1-generalinformation-namecontainer {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .template1-personalinformationsubcontainer {
+    flex-direction: column;
+  }
+  .template1-generalinformation-descriptioncontainer {
+    text-align: justify;
+  }
+}

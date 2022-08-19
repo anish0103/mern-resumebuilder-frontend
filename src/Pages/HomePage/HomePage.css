@@ -41,3 +41,51 @@
 .homepage-createbutton:hover {
   background-color: #35393d;
 }
+@media screen and (max-width: 480px) {
+  .homepage-rightcontainer {
+    width: 100% !important;
+    height: 35% !important;
+  }
+  .homepage-leftcontainer {
+    width: 100% !important;
+  }
+  .homepage-leftsubcontainer p {
+    font-size: 15px !important;
+  }
+  .homepage-leftsubcontainer h3 {
+    font-size: 30px !important;
+  }
+  .homepage-createbutton {
+    font-size: 14px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .homepage-maincontainer {
+    flex-direction: column;
+  }
+  .homepage-leftcontainer {
+    width: 95%;
+  }
+  .homepage-rightcontainer {
+    width: 70%;
+    height: 45%;
+  }
+  .homepage-rightcontainer {
+    order: 1;
+  }
+  .homepage-leftcontainer {
+    order: 2;
+  }
+  .homepage-leftsubcontainer p {
+    font-size: 20px;
+  }
+  .homepage-leftsubcontainer h3 {
+    font-size: 40px;
+  }
+  .homepage-createbutton {
+    font-size: 16px;
+  }
+  .homepage-leftsubcontainer {
+    width: 85%;
+  }
+}

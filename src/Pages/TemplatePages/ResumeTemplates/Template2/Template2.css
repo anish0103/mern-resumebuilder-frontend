@@ -1,5 +1,6 @@
 .template2-maincontainer {
   width: 100%;
+  margin-top: 20px;
   height: fit-content;
   font-family: 'Ubuntu' !important;
 }
@@ -135,4 +136,31 @@
 .template2-projectcontainer-link {
   margin: 8px 0;
   color: #313c4e;
+}
+@media screen and (max-width: 480px) {
+  .template2-generalinformation-namecontainer {
+    flex-direction: column;
+  }
+  .template2-professionalinformationsubcontainer {
+    flex-direction: column;
+  }
+  .template2-professionalinformation-leftcontainer,
+  .template2-professionalinformation-rightcontainer {
+    width: 100%;
+  }
+  .template2-generalinformation-roletitlecontainer {
+    font-size: 25px;
+    margin-left: 0;
+  }
+  .template2-generalinformation-namecontainer {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .template2-personalinformationsubcontainer {
+    flex-direction: column;
+  }
+  .template2-generalinformation-descriptioncontainer {
+    text-align: justify;
+  }
 }

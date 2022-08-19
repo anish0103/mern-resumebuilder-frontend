@@ -32,6 +32,19 @@
 .navigation-signupbutton:hover {
   background-color: #35393d;
 }
-.navigation-loginbutton:hover, .navigation-name:hover {
+.navigation-loginbutton:hover,
+.navigation-name:hover {
   color: #868d93;
+}
+@media screen and (max-width: 480px) {
+  .navigation-signupbutton,
+  .navigation-loginbutton {
+    font-size: 14px;
+  }
+  .navigation-container {
+    width: 95%;
+  }
+  .navigation-name {
+    font-size: 16px;
+  }
 }

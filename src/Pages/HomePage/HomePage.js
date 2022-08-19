@@ -53,8 +53,8 @@ const HomePage = () => {
       <div className='homepage-leftcontainer'>
         <motion.div variants={ElementVariant} className='homepage-leftsubcontainer'>
           <motion.p variants={ElementVariant}>TURN ON YOUR CAREER</motion.p>
-          <motion.h3 variants={SubElementVariant} >Boost your chances of <br /> landing that dream job</motion.h3>
-          <motion.p variants={SubElementVariant} >Create eye catching resume using one of our <br /> templates in just a few steps</motion.p>
+          <motion.h3 variants={SubElementVariant} >Boost your chances of  landing that dream job</motion.h3>
+          <motion.p variants={SubElementVariant} >Create eye catching resume using one of our templates in just a few steps</motion.p>
           <motion.div variants={SubElementVariant} >
             <NavLink className='homepage-createbutton' to='/'>Create Now</NavLink>
           </motion.div>

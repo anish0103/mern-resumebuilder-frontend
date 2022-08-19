@@ -103,3 +103,35 @@
   margin: 0px 5px;
   font-size: 13px;
 }
+@media screen and (max-width: 480px) {
+  .authpage-leftsubcontainer {
+    width: 65% !important;
+  }
+  .authpage-formcontainer {
+    width: 100% !important;
+    height: 90% !important;
+  }
+  .authpage-loginbuttoncontainer button,
+  .authpage-singupbuttoncontainer button {
+    font-size: 14px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .authpage-maincontainer {
+    flex-direction: column;
+  }
+  .authpage-leftcontainer,
+  .authpage-rightcontainer {
+    width: 95%;
+  }
+  .authpage-leftcontainer {
+    height: 45%;
+  }
+  .authpage-leftsubcontainer {
+    width: 55%;
+  }
+  .authpage-formcontainer {
+    width: 80%;
+    height: 80%;
+  }
+}

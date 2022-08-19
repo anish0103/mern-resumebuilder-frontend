@@ -106,15 +106,15 @@
   transition: 0.4s;
 }
 .personalinformation-deletebutton {
-  border: 2px solid #E76450 !important;
-  color: #E76450 !important;
+  border: 2px solid #e76450 !important;
+  color: #e76450 !important;
   margin-right: 10px;
   width: fit-content !important;
   background-color: transparent;
 }
 .personalinformation-deletebutton:hover {
   cursor: pointer;
-  background-color: #E76450 !important;
+  background-color: #e76450 !important;
   color: white !important;
 }
 .personalinformation-addbutton {
@@ -146,4 +146,31 @@
 .personalinformation-inputcontainer-enddatecontainer input {
   margin: 0;
   margin-right: 5px;
+}
+@media screen and (max-width: 480px) {
+  .personalinformation-horizontalcontainer {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  .personalinformation-inputcontainer input,
+  .personalinformation-inputcontainer textarea {
+    flex: 1;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  .personalinformation-inputcontainer label {
+    font-size: 14px;
+  }
+  .personalinformation-educationdetailcontainer button,
+  .personalinformation-addbutton,
+  .personalinformation-deletebutton {
+    width: 70px;
+    height: 35px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  .personalinformation-maincontainer {
+    margin-bottom: 100px;
+  }
 }

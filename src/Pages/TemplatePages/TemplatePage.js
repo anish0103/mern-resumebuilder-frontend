@@ -44,7 +44,7 @@ const TemplatePage = () => {
     }
 
     return (
-        <div>{template === "Template1" ? <Template1 id={userId} Data={Data} /> : <Template2 id={userId} Data={Data}/>}</div>
+        <div>{template === "Template1" ? <Template1 id={userId} Data={Data} /> : <Template2 id={userId} Data={Data} />}</div>
     )
 }
 
