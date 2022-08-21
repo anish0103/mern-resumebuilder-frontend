@@ -6,7 +6,7 @@ export const UPDATEUSERINFORMATION = "UPDATEUSERINFORMATION"
 export const CHOOSETEMPLATE = "CHOOSETEMPLATE"
 export const RESETVIEWCOUNT = "RESETVIEWCOUNT"
 
-export const BACKENDLINK = "http://localhost:8080"
+export const BACKENDLINK = process.env.REACT_APP_BACKEND_URL
 
 export const LoginStatusHandler = data => {
     return {
@@ -35,7 +35,7 @@ export const LoginUser = data => {
                 data: userdata
             })
         } catch (error) {
-            console.log(error)
+            throw error
         }
     }
 }
@@ -60,7 +60,7 @@ export const createUser = data => {
                 data: userdata
             })
         } catch (error) {
-            console.log(error)
+            throw error
         }
     }
 }
@@ -85,7 +85,7 @@ export const googleLoginSignup = data => {
                 data: userdata
             })
         } catch (error) {
-            console.log(error)
+            throw error
         }
     }
 }
@@ -110,7 +110,7 @@ export const addInformationForm = (data, id) => {
                 data: userdata
             })
         } catch (error) {
-            console.log(error)
+            throw error
         }
     }
 }
@@ -129,7 +129,7 @@ export const getUserById = id => {
                 data: userdata
             })
         } catch (error) {
-            console.log(error)
+            throw error
         }
     }
 }
@@ -154,7 +154,7 @@ export const chooseTemplate = data => {
                 data: userdata
             })
         } catch (error) {
-            console.log(error)
+            throw error
         }
     }
 }
@@ -179,7 +179,7 @@ export const resetViewCount = data => {
                 data: userdata
             })
         } catch (error) {
-            console.log(error)
+            throw error
         }
     }
 }

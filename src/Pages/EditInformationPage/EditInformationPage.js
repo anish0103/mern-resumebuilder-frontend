@@ -1,14 +1,17 @@
 import { React, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 import ControlPointRoundedIcon from '@mui/icons-material/ControlPointRounded';
 import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 
 import Loading from '../Loading/Loading'
+import ErrorModal from '../../Components/ErrorModal/ErrorModal'
 import { addInformationForm } from '../../store/action/action';
 
-const EditInformationPage = () => {
+const EditInformationPage = props => {
     const [loading, setLoading] = useState(false)
     const [formData, setFormData] = useState({
         Education: [],
@@ -16,7 +19,9 @@ const EditInformationPage = () => {
         Projects: [],
         Skills: []
     })
-    const history = useHistory();
+    const [error, setError] = useState(false)
+    const [errorContent, setErrorContent] = useState("")
+
     const dispatch = useDispatch();
 
     const UserData = useSelector(state => state.userData)
@@ -95,9 +100,11 @@ const EditInformationPage = () => {
             setLoading(true)
             await dispatch(addInformationForm(formData, UserData?._id))
             setLoading(false)
-            history.replace('/')
+            toast.success("Your Information is updated!!")
         } else {
-            alert("Please Enter Basic Details such as Name, RoleTitle, Description, Email, Phone Number, Location, Education And Skills")
+            setError(true)
+            setErrorContent("Please Enter Basic Details such as Name, RoleTitle, Description, Email, Phone Number, Location, Education And Skills")
+            return
         }
     }
 
@@ -141,9 +148,15 @@ const EditInformationPage = () => {
         setFormData({ ...formData, Skills: formData.Skills })
     }
 
+    const ModalHandler = () => {
+        setError(false)
+    }
+
     return (
         <>
             {loading && <Loading />}
+            <ErrorModal visible={error} title={'Error'} content={errorContent} ModalHandler={ModalHandler} />
+            <ToastContainer />
             <div className='personalinformation-maincontainer'>
                 <motion.div variants={ContainerVariant} initial="hidden" animate="show" exit="hidden" className='personalinformation-container'>
                     <motion.div variants={ElementVariant} className='personalinformation-titlecontainer'>
@@ -320,7 +333,7 @@ const EditInformationPage = () => {
                     </div>}
                     <motion.div variants={SubElementVariant} className='personalinformation-actionbuttoncontainer'>
                         <button onClick={SubmitHandler}>Save</button>
-                        <button onClick={() => history.replace('/')}>Cancel</button>
+                        <button onClick={() => props.ShowStateHandler()}>Cancel</button>
                     </motion.div>
                 </motion.div>
             </div>

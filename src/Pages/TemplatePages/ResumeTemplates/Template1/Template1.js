@@ -1,6 +1,5 @@
-import { React, useEffect } from 'react'
+import { React } from 'react'
 import { motion } from 'framer-motion'
-import io from 'socket.io-client'
 import MailRoundedIcon from '@mui/icons-material/MailRounded';
 import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
 import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
@@ -8,23 +7,8 @@ import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
 import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
 
 import './Template1.css'
-import { BACKENDLINK } from '../../../../store/action/action'
-
-let socket;
 
 const Template1 = props => {
-
-  useEffect(() => {
-    socket = io(BACKENDLINK)
-  }, [])
-
-  useEffect(() => {
-    if (socket) {
-      socket.on('connect', () => {
-        socket.emit('updatecount', { id: props.id })
-      });
-    }
-  }, [])
 
   const Data = props.Data;
 

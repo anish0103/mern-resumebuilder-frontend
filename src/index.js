@@ -10,7 +10,7 @@ import './index.css';
 import App from './App';
 import Reducer from './store/reducer/reducer';
 
-const ClientId = "174814350741-i0bufq6o1ihs9tjjq0ior6ud63oau9ji.apps.googleusercontent.com"
+const ClientId = process.env.REACT_APP_GOOGLEID
 
 const store = createStore(Reducer, applyMiddleware(ReduxThunk))
 

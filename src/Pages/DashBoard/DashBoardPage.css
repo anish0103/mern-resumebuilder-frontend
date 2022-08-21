@@ -104,4 +104,7 @@
   .dashboardpage-copylinkcontainer {
     width: 45%;
   }
+  .dashboardpage-maincontainer {
+    height: 90vh;
+  }
 }

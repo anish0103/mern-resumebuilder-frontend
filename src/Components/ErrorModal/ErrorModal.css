@@ -1,0 +1,45 @@
+.errormodal-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.errormodal-content h1 {
+  height: 25%;
+  margin: 0;
+  font-weight: 600;
+  color: #e76450;
+}
+.errormodal-content h3 {
+  height: 50%;
+  font-weight: 600;
+}
+.errormodal-content button {
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  padding: 12px;
+  width: 10%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  background-color: #246bfb;
+  border-radius: 8px;
+  font-weight: 600;
+}
+@media screen and (max-width: 480px) {
+  .errormodal-content h1 {
+    font-size: 1.4em;
+    height: 25%;
+  }
+  .errormodal-content h3 {
+    font-size: 1em;
+  }
+  .errormodal-content button {
+    width: 30%;
+    padding: 9px;
+    right: 2%;
+  }
+}

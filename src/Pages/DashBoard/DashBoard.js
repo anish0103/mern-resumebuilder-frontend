@@ -71,7 +71,7 @@ const DashBoard = () => {
         </motion.div>
       </motion.div>
       <div className='dashboard-rightcontainer'>
-        {showState === "dashboard" ? <DashBoardPage id={UserData?._id} /> : showState === "editdetail" ? <EditInformationPage /> : <ChooseTemplatePage />}
+        {showState === "dashboard" ? <DashBoardPage id={UserData?._id} /> : showState === "editdetail" ? <EditInformationPage ShowStateHandler={() => setShowState("dashboard")} /> : <ChooseTemplatePage />}
       </div>
     </div>
   )

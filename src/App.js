@@ -41,7 +41,7 @@ function App() {
 
   return (
     <>
-      {!isLogin && <Navigation />}
+      <Navigation />
       <AnimatePresence exitBeforeEnter>
         {!isLogin && <Switch location={location} key={location.pathname}>
           <Route path="/" exact>

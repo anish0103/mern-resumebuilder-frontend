@@ -10,12 +10,16 @@ import { useDispatch } from 'react-redux'
 import './LogInPage.css'
 import Loading from '../Loading/Loading';
 import LoginImage from '../../assets/signin.jpg'
+import ErrorModal from '../../Components/ErrorModal/ErrorModal'
 import { LoginUser, googleLoginSignup } from '../../store/action/action';
 
 const LogInPage = () => {
     const [loading, setLoading] = useState(false)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [error, setError] = useState(false)
+    const [errorContent, setErrorContent] = useState("")
+
     const history = useHistory()
     const dispatch = useDispatch()
 
@@ -70,7 +74,9 @@ const LogInPage = () => {
             setLoading(false)
         } catch (error) {
             setLoading(false)
-            return console.log(error)
+            setError(true)
+            setErrorContent(error)
+            return
         }
     }
 
@@ -85,14 +91,21 @@ const LogInPage = () => {
                 setLoading(false)
             } catch (error) {
                 setLoading(false)
-                return console.log(error)
+                setError(true)
+                setErrorContent(error)
+                return
             }
         }
+    }
+
+    const ModalHandler = () => {
+        setError(false)
     }
 
     return (
         <>
             {loading && <Loading />}
+            <ErrorModal visible={error} title={'Error'} content={errorContent} ModalHandler={ModalHandler} />
             <ToastContainer />
             <motion.div variants={ContainerVariant} initial="hidden" animate="show" exit="hidden" className='authpage-maincontainer'>
                 <div className='authpage-leftcontainer'>

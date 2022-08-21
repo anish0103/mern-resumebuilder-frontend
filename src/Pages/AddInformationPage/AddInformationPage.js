@@ -7,6 +7,7 @@ import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 
 import './AddInformationPage.css'
 import Loading from '../Loading/Loading'
+import ErrorModal from '../../Components/ErrorModal/ErrorModal'
 import { addInformationForm } from '../../store/action/action';
 
 const AddInformationPage = () => {
@@ -17,6 +18,8 @@ const AddInformationPage = () => {
         Projects: [],
         Skills: []
     })
+    const [error, setError] = useState(false)
+    const [errorContent, setErrorContent] = useState("")
 
     let { userid } = useParams();
     const history = useHistory();
@@ -94,7 +97,9 @@ const AddInformationPage = () => {
             setLoading(false)
             history.replace('/choosetemplate')
         } else {
-            alert("Please Enter Basic Details such as Name, RoleTitle, Description, Email, Phone Number, Location, Education And Skills")
+            setError(true)
+            setErrorContent("Please Enter Basic Details such as Name, RoleTitle, Description, Email, Phone Number, Location, Education And Skills")
+            return
         }
     }
 
@@ -138,9 +143,14 @@ const AddInformationPage = () => {
         setFormData({ ...formData, Skills: formData.Skills })
     }
 
+    const ModalHandler = () => {
+        setError(false)
+    }
+
     return (
         <>
             {loading && <Loading />}
+            <ErrorModal visible={error} title={'Error'} content={errorContent} ModalHandler={ModalHandler} />
             <div className='personalinformation-maincontainer'>
                 <motion.div variants={ContainerVariant} initial="hidden" animate="show" exit="hidden" className='personalinformation-container'>
                     <motion.div variants={ElementVariant} className='personalinformation-titlecontainer'>

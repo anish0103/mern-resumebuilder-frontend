@@ -13,7 +13,7 @@
 }
 .navigation-loginbutton,
 .navigation-name {
-  color: black;
+  color: #1d1d20;
   transition: 0.4s;
   text-decoration: none;
 }
@@ -30,21 +30,29 @@
   border-radius: 8px;
 }
 .navigation-signupbutton:hover {
-  background-color: #35393d;
+  background-color: #1d1d20;
 }
 .navigation-loginbutton:hover,
 .navigation-name:hover {
   color: #868d93;
+}
+.navigation-tabletphone {
+  display: none;
 }
 @media screen and (max-width: 480px) {
   .navigation-signupbutton,
   .navigation-loginbutton {
     font-size: 14px;
   }
-  .navigation-container {
-    width: 95%;
-  }
   .navigation-name {
     font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navigation-container {
+    width: 94%;
+  }
+  .navigation-tabletphone {
+    display: flex;
   }
 }

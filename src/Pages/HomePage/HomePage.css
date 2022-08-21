@@ -39,7 +39,7 @@
   transition: 0.4s;
 }
 .homepage-createbutton:hover {
-  background-color: #35393d;
+  background-color: #1d1d20;
 }
 @media screen and (max-width: 480px) {
   .homepage-rightcontainer {

@@ -1,7 +1,9 @@
 import { React, useState } from 'react'
 import { motion } from 'framer-motion'
-import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 import './ChooseTemplatePage.css'
 import Loading from '../Loading/Loading'
@@ -12,7 +14,6 @@ import { chooseTemplate } from '../../store/action/action'
 const ChooseTemplatePage = () => {
   const [loading, setLoading] = useState(false)
   const dispatch = useDispatch()
-  const history = useHistory()
 
   const UserData = useSelector(state => state.userData)
 
@@ -21,7 +22,7 @@ const ChooseTemplatePage = () => {
       setLoading(true)
       await dispatch(chooseTemplate({ id: UserData._id, name: data }))
       setLoading(false)
-      history.replace('/')
+      toast.success("Your template is updated!!")
     } catch (error) {
       console.log(error)
     }
@@ -71,6 +72,7 @@ const SubElementVariant = {
   return (
     <>
       {loading && <Loading />}
+      <ToastContainer />
       <motion.div variants={ContainerVariant} initial="hidden" animate="show" exit="hidden" className='choosetemplatepage-maincontainer'>
         <div className='choosetemplatepage-container'>
           <motion.div variants={ElementVariant} className='choosetemplatepage-titlecontainer'>

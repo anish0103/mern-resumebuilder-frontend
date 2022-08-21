@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import './HomePage.css'
 
 const HomePage = () => {
+
   const ContainerVariant = {
     hidden: {
       opacity: 0
@@ -56,7 +57,7 @@ const HomePage = () => {
           <motion.h3 variants={SubElementVariant} >Boost your chances of  landing that dream job</motion.h3>
           <motion.p variants={SubElementVariant} >Create eye catching resume using one of our templates in just a few steps</motion.p>
           <motion.div variants={SubElementVariant} >
-            <NavLink className='homepage-createbutton' to='/'>Create Now</NavLink>
+            <NavLink className='homepage-createbutton' to='/login'>Create Now</NavLink>
           </motion.div>
         </motion.div>
       </div>

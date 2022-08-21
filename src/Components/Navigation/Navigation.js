@@ -43,20 +43,29 @@ const Navigation = () => {
   }
 
   return (
-    <motion.div className='navigation-maincontainer'>
-      <motion.div variants={ContainerVariant} initial="hidden" animate="show" className='navigation-container'>
-        <motion.div variants={ElementVariant}>
-          <NavLink className='navigation-name' to='/'>Resume Builder</NavLink>
+    <div>
+      {!isLogin ? <motion.div className='navigation-maincontainer'>
+        <motion.div variants={ContainerVariant} initial="hidden" animate="show" className='navigation-container'>
+          <motion.div variants={ElementVariant}>
+            <NavLink className='navigation-name' to='/'>Resume Builder</NavLink>
+          </motion.div>
+          <motion.div variants={ElementVariant}>
+            <NavLink className='navigation-loginbutton' to='/login'>Log In</NavLink>
+            <NavLink className='navigation-signupbutton' to='/signup'>Sign Up</NavLink>
+          </motion.div>
         </motion.div>
-        {!isLogin && <motion.div variants={ElementVariant}>
-          <NavLink className='navigation-loginbutton' to='/login'>Log In</NavLink>
-          <NavLink className='navigation-signupbutton' to='/signup'>Sign Up</NavLink>
-        </motion.div>}
-        {isLogin && <motion.div variants={ElementVariant}>
-          <NavLink className='navigation-signupbutton' onClick={LogoutHandler} to='#'>Log Out</NavLink>
-        </motion.div>}
-      </motion.div>
-    </motion.div>
+      </motion.div> : <motion.div className='navigation-maincontainer navigation-tabletphone'>
+        <motion.div variants={ContainerVariant} initial="hidden" animate="show" className='navigation-container'>
+          <motion.div variants={ElementVariant}>
+            <NavLink className='navigation-name' to='/'>Resume Builder</NavLink>
+          </motion.div>
+          <motion.div variants={ElementVariant}>
+            <NavLink className='navigation-signupbutton' onClick={LogoutHandler} to='#'>Log Out</NavLink>
+          </motion.div>
+        </motion.div>
+      </motion.div>}
+    </div>
+
   )
 }
 
