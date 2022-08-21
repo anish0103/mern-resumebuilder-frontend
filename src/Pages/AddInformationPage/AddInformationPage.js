@@ -74,16 +74,16 @@ const AddInformationPage = () => {
         const Data = formData;
         if (name === "Education") {
             Data.Education[index][fieldvalue] = value
-            setFormData({ ...formData, Data })
+            setFormData({ ...formData, Education: Data.Education })
         } else if (name === "Work") {
             Data.Work[index][fieldvalue] = value
-            setFormData({ ...formData, Data })
+            setFormData({ ...formData, Work: Data.Work })
         } else if (name === "Project") {
             Data.Projects[index][fieldvalue] = value
-            setFormData({ ...formData, Data })
+            setFormData({ ...formData, Projects: Data.Projects })
         } else if (name === "Skill") {
             Data.Skills[index] = value
-            setFormData({ ...formData, Data })
+            setFormData({ ...formData, Skills: Data.Skills })
         } else {
             Data[name] = value
             setFormData({ ...formData, [name]: value })

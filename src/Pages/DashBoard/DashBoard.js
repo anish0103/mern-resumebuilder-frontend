@@ -63,7 +63,8 @@ const DashBoard = () => {
         <motion.div variants={ContainerVariant} className='dashboard-leftcontainer-buttoncontainer'>
           <motion.button variants={ContainerVariant} onClick={() => setShowState("dashboard")} className={showState === "dashboard" && "activebutton"}><HomeOutlinedIcon />Dashboard</motion.button>
           <motion.button variants={ContainerVariant} onClick={() => setShowState("editdetail")} className={showState === "editdetail" && "activebutton"}><EditOutlinedIcon />Edit Details</motion.button>
-          <motion.button variants={ContainerVariant} onClick={() => setShowState("changetemplate")} className={showState === "changetemplate" && "activebutton"}><PublishedWithChangesRoundedIcon />Change Template</motion.button>
+          <motion.button variants={ContainerVariant} onClick={() => setShowState("changetemplate")} className={`${showState === "changetemplate" && "activebutton"} changetemplate-desktop`}><PublishedWithChangesRoundedIcon />Change Template</motion.button>
+          <motion.button variants={ContainerVariant} onClick={() => setShowState("changetemplate")} className={`${showState === "changetemplate" && "activebutton"} changetemplate-mobile`}><PublishedWithChangesRoundedIcon />Template</motion.button>
           <motion.button variants={ContainerVariant} onClick={PreviewHandler}><OpenInNewRoundedIcon />Preview</motion.button>
         </motion.div>
         <motion.div className='dashboard-leftcontainer-logoutcontainer'>

@@ -79,16 +79,16 @@ const EditInformationPage = props => {
         const Data = formData;
         if (name === "Education") {
             Data.Education[index][fieldvalue] = value
-            setFormData({ ...formData, Data })
+            setFormData({ ...formData, Education: Data.Education })
         } else if (name === "Work") {
             Data.Work[index][fieldvalue] = value
-            setFormData({ ...formData, Data })
+            setFormData({ ...formData, Work: Data.Work })
         } else if (name === "Project") {
             Data.Projects[index][fieldvalue] = value
-            setFormData({ ...formData, Data })
+            setFormData({ ...formData, Projects: Data.Projects })
         } else if (name === "Skill") {
             Data.Skills[index] = value
-            setFormData({ ...formData, Data })
+            setFormData({ ...formData, Skills: Data.Skills })
         } else {
             Data[name] = value
             setFormData({ ...formData, [name]: value })
@@ -98,6 +98,7 @@ const EditInformationPage = props => {
     const SubmitHandler = async () => {
         if (formData?.Name !== undefined || formData?.RoleTitle !== undefined || formData?.Description !== undefined || formData?.Email !== undefined || formData?.PhoneNumber !== undefined || formData?.Location !== undefined || formData?.Email !== undefined || formData.Education.length !== 0 || formData.Skills.length !== 0) {
             setLoading(true)
+            console.log(formData)
             await dispatch(addInformationForm(formData, UserData?._id))
             setLoading(false)
             toast.success("Your Information is updated!!")
