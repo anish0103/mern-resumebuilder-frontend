@@ -23,7 +23,8 @@ export const LoginUser = data => {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
                 },
             })
             const userdata = await response.json()
@@ -48,7 +49,8 @@ export const createUser = data => {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
                 },
             })
             const userdata = await response.json()
@@ -73,7 +75,8 @@ export const googleLoginSignup = data => {
                 method: 'POST',
                 body: JSON.stringify({ token: data.credential }),
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
                 },
             })
             const userdata = await response.json()
@@ -98,7 +101,8 @@ export const addInformationForm = (data, id) => {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
                 },
             })
             const userdata = await response.json()
@@ -119,7 +123,9 @@ export const getUserById = id => {
     return async dispatch => {
         try {
             // Get the data of the user by passing the id of the user
-            const response = await fetch(BACKENDLINK + `/api/users/${id}`)
+            const response = await fetch(BACKENDLINK + `/api/users/${id}`, {
+                headers: { 'Access-Control-Allow-Origin': '*' }
+            })
             const userdata = await response.json();
             if (!response.ok) {
                 throw userdata.message
@@ -142,7 +148,8 @@ export const chooseTemplate = data => {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
                 },
             })
             const userdata = await response.json()
@@ -166,7 +173,8 @@ export const resetViewCount = data => {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
                 },
             })
             const userdata = await response.json()
