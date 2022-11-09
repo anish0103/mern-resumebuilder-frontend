@@ -78,6 +78,10 @@
   .dashboardpage-welcometext {
     font-size: 30px;
   }
+  .dashboardpage-maincontainer {
+    margin-bottom: 15%;
+    height: fit-content;
+  }
   .dashboardpage-informationcontainer {
     flex-direction: column;
   }
@@ -103,8 +107,5 @@
   .dashboardpage-viewcountcontainer,
   .dashboardpage-copylinkcontainer {
     width: 45%;
-  }
-  .dashboardpage-maincontainer {
-    height: 90vh;
   }
 }
