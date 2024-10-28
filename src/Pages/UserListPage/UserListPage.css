@@ -3,7 +3,67 @@
     width: 100%;
     justify-content: center;
     margin: 20px 0px;
+    height: 90vh;
   }
+
   .userlistpage-container {
     width: 95%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .userlistpage-usermaincontainer {
+    width: 25%;
+    height: 150px;
+    display: flex;
+    padding: 5px;
+    border-radius: 12px;
+    align-items: center;
+    border: 2px solid #246bfb;
+  }
+
+  .userlistpage-userimagecontainer {
+    height: 70%;
+  }
+
+  .userlistpage-userimagecontainer img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .userlistpage-userdetailcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .userlistpage-usernamecontainer p {
+    font-size: 20px;
+    /* color: white; */
+  }
+
+  .userlistpage-actionbuttoncontainer {
+    display: flex;
+
+  }
+
+  .userlistpage-actionbuttoncontainer button {
+    padding: 9px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #246bfb;
+    color: white;
+    font-size: 16px;
+    border: 2px solid #246bfb;
+    transition: 0.4s;
+    margin-right: 5%;
+  }
+
+  .userlistpage-actionbuttoncontainer button:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: #246bfb;
   }

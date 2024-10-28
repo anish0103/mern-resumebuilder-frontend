@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 import './UserListPage.css'
 import Loading from '../Loading/Loading';
+import Avtar from '../../assets/avatar.png'
 
 const UserListPage = () => {
 
@@ -27,16 +28,16 @@ const UserListPage = () => {
         // console.log(userList)
         setLoading(false)
     }
-
+    
     useEffect(() => {
         fetchUsers()
     }, [])
-
+    
     const resumeOpenFunction = (id) => {
         console.log(id)
         window.open(window.location.href + "resume/" + id, "_blank")
     }
-
+    
     const UserActiveSwitchFunction = async (id) => {
         setLoading(true)
         const responseData = { id: id }
@@ -49,8 +50,9 @@ const UserListPage = () => {
             },
         })
         const data = await response.json()
-        // console.log(data)
+        console.log(data)
         fetchUsers()
+        toast.success(data.IsActive == true ? "User Activation Completed" : "User Deactivation Completed")
     }
 
     return (
@@ -58,26 +60,24 @@ const UserListPage = () => {
             {loading && <Loading />}
             <ToastContainer />
             <div className="userlistpage-maincontainer">
-                <div className='="userlistpage-container'>
-                    <table>
-                        <th>
-                            <td>Name</td>
-                            <td>Action</td>
-                        </th>
-                        {userList.map((data) => {
-                            return <tr>
-                                {/* {console.log(data.Details.length, "Printing this")} */}
-                                <td>{data.Details[0].Name}</td>
-                                <td>
+                <div className='userlistpage-container'>
+                    {userList.map((data) => {
+                        return <div className='userlistpage-usermaincontainer'>
+                            <div className='userlistpage-userimagecontainer'>
+                                <img src={Avtar} />
+                            </div>
+                            <div className='userlistpage-userdetailcontainer'>
+                                <div className='userlistpage-usernamecontainer'>
+                                    <p>{data.Details[0].Name}</p>
+                                </div>
+                                <div className='userlistpage-actionbuttoncontainer'>
                                     <button id={data._id} onClick={(e) => resumeOpenFunction(e.target.id)} >Preview</button>
                                     <button id={data._id} onClick={(e) => UserActiveSwitchFunction(e.target.id)} >{data.IsActive == true ? "Deactivate" : "Activate"}</button>
-                                </td>
-                            </tr>
-                        })}
-                        <tr>
+                                </div>
+                            </div>
+                        </div>
+                    })}
 
-                        </tr>
-                    </table>
                 </div>
             </div>
         </>
