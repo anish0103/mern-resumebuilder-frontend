@@ -1,0 +1,9 @@
+.userlistpage-maincontainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 20px 0px;
+  }
+  .userlistpage-container {
+    width: 95%;
+  }

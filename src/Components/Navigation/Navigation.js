@@ -7,7 +7,7 @@ import './Navigation.css'
 import { LoginStatusHandler } from '../../store/action/action'
 
 const Navigation = () => {
-  const isLogin = useSelector(state => state.isLogin)
+  const isLogin = useSelector(state => state.isLogin)  
   const dispatch = useDispatch()
 
   const ContainerVariant = {
@@ -39,7 +39,7 @@ const Navigation = () => {
 
   const LogoutHandler = () => {
     dispatch(LoginStatusHandler(false))
-    console.log("Logging out...")
+    // console.log("Logging out...")
   }
 
   return (

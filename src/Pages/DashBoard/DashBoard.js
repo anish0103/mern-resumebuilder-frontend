@@ -7,18 +7,21 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import PublishedWithChangesRoundedIcon from '@mui/icons-material/PublishedWithChangesRounded';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
+import GroupIcon from '@mui/icons-material/Group';
 
 import './DashBoard.css'
 import { LoginStatusHandler } from '../../store/action/action';
 import EditInformationPage from '../EditInformationPage/EditInformationPage';
 import ChooseTemplatePage from '../TemplatePages/ChooseTemplatePage';
 import DashBoardPage from './DashBoardPage';
+import UserListPage from '../UserListPage/UserListPage';
 
 const DashBoard = () => {
   const [showState, setShowState] = useState("dashboard")
   const dispatch = useDispatch()
 
   const UserData = useSelector(state => state.userData)
+  console.log(UserData?.IsAdmin)
 
   const LogoutHandler = () => {
     dispatch(LoginStatusHandler(false))
@@ -66,13 +69,14 @@ const DashBoard = () => {
           <motion.button variants={ContainerVariant} onClick={() => setShowState("changetemplate")} className={`${showState === "changetemplate" && "activebutton"} changetemplate-desktop`}><PublishedWithChangesRoundedIcon />Change Template</motion.button>
           <motion.button variants={ContainerVariant} onClick={() => setShowState("changetemplate")} className={`${showState === "changetemplate" && "activebutton"} changetemplate-mobile`}><PublishedWithChangesRoundedIcon />Template</motion.button>
           <motion.button variants={ContainerVariant} onClick={PreviewHandler}><OpenInNewRoundedIcon />Preview</motion.button>
+          {UserData?.IsAdmin == true && <motion.button variants={ContainerVariant} onClick={() => setShowState("userList")} className={`${showState === "userList" && "activebutton"}`}><GroupIcon />User List</motion.button>}
         </motion.div>
         <motion.div className='dashboard-leftcontainer-logoutcontainer'>
           <motion.button variants={ContainerVariant} onClick={LogoutHandler}><ExitToAppRoundedIcon />Logout</motion.button>
         </motion.div>
       </motion.div>
       <div className='dashboard-rightcontainer'>
-        {showState === "dashboard" ? <DashBoardPage id={UserData?._id} /> : showState === "editdetail" ? <EditInformationPage ShowStateHandler={() => setShowState("dashboard")} /> : <ChooseTemplatePage />}
+        {showState === "dashboard" ? <DashBoardPage id={UserData?._id} /> : showState === "editdetail" ? <EditInformationPage ShowStateHandler={() => setShowState("dashboard")} /> : showState === "userList" ? <UserListPage /> : <ChooseTemplatePage />}
       </div>
     </div>
   )
